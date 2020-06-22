@@ -1,0 +1,3 @@
+create a an environment
+activate and pip install django
+run python manage.py runserver 
