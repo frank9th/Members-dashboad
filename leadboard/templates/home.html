@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %} <br/>
+
+<h1> leadership Board</h1>
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name </th>
+      <th scope="col">Email </th>
+      <th scope="col">Gender</th>
+      <th scope="col">Track</th>
+      <th scope="col">Language </th>
+      <th scope="col">Point</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>Jacob</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table class="table table-bordered table-dark" >
+
+  {% for things in all_items %} 
+    {% if things.completed %}
+      <tr class="table-secondary">
+        <td class="striker"> <a href="{% url 'edit' things.id %}"> {{ things.item }}</a> </td>
+        <td><center><a href="{% url 'uncross' things.id %}"> Uncross Off</a></center></td> 
+        <td><center><a href="{% url 'delete' things.id %}"> Delete </a> </center></td>
+      </tr> 
+    {% else %}
+        <tr>
+        <td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
+        <td><center><a href="{% url 'cross_off' things.id %}"> Cross Off</a></center></td> 
+        <td><center> <a href="{% url 'delete' things.id %}"> Delete </a> </center></td>
+      </tr> 
+    {% endif %}
+
+  {% endfor %}
+</table> 
+
+--->
+
+
+{% endblock %}
+
+
+
