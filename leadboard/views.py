@@ -22,3 +22,7 @@ def home(request):
 def about(request):
     context = {"leader": Leader.objects.all()}
     return render(request, "about.html", context)
+
+def contact(request):
+	return render(request, 'contact.html', {})
+
