@@ -56,12 +56,15 @@
             <h2>MENUE </h2>
                   
             <ul>
-              <li><a class="active" href="#">Menue</a></li>
-              <li><a href="/">Schema</a></li>
-              <li><a href="about">Doccs</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">HNGi7 Denefits</a></li>
-              <li><a href="#about">Contact Us</a></li>
+              <li><a class="active" href="{% url 'home' %}">Dashboard</a></li>
+              <li><a href="http://localhost:8000/api/leader/">API</a></li>
+
+              <li><a href="http://localhost:8000/schema/">Schema</a></li>
+
+              <li><a href="http://localhost:8000/docs/">Doccs</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="#">HNGi7 Denefits</a></li>
+              <li><a href="{% url 'contact' %}">Contact Us</a></li>
             </ul>
 
 </div>

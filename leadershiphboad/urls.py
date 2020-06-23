@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
 from rest_framework.schemas import get_schema_view
 
@@ -25,7 +25,7 @@ schema_view = get_schema_view(title=API_TITLE)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('leadboard.urls')),
-    path('schema/', schema_view),
-    path('docs/', include_docs_urls(title="LeaderBoard")),
+    path('schema/', schema_view, name= "shema"),
+    path('docs/', include_docs_urls(title="LeaderBoard"), name="docs"),
     
 ]
