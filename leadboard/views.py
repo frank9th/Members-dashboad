@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets 
 from .models import Leader
+from .models import Members
+import requests
+import json
 
 
 from . import serializers
@@ -23,5 +26,6 @@ def about(request):
     return render(request, "about.html", {"title": "About"})
 
 def contact(request):
-	return render(request, 'contact.html', {})
+	 member = Members.objects.all()
+	 return render(request, 'contact.html', {'member':member})
 

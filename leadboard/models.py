@@ -38,3 +38,19 @@ class Leader(models.Model):
 
 
     
+class Members(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    gender = models.CharField( max_length=10)
+    track = models.CharField( max_length=10 )
+    language = models.CharField( max_length=10)
+    points = models.DecimalField(max_digits = 5, decimal_places = 2)
+
+    def __str__(self):
+        return self.first_name
+
+
+
+
+

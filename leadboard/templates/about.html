@@ -1,14 +1,54 @@
 
 
+
+
 {% extends 'base.html' %}
-
-{% block content %} <br/>
-
-
-
-
-
-
-
-
+{% block content %}
+{% for leader in leaders %}
+<div class="table-box">
+  <div class="caption">
+    <h1> HNG17 Internship Dashbord</h1>
+    <h3> internts details and point board </h3>
+  </div>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td,
+    th {
+      border: 1px solid #DDDDDD;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #DDDDDD;
+    }
+  </style> 
+  
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email </th>
+      <th>Gender </th>
+      <th>Tracks </th>
+      <th>Language</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>{{leader.id}}</td>
+      <td>{{leader.first_name}}</td>
+      <td>{{leader.last_name}}</td>
+      <td>{{leader.email}}</td>
+      <td>{{leader.gender}}</td>
+      <td>{{leader.tracks}}</td>
+      <td>{{leader.language}}</td>
+      <td>{{leader.points}}</td>
+    </tr>
+  </table> -->
+</div>
+{% endfor %}
 {% endblock %}
