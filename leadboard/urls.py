@@ -1,4 +1,6 @@
 
+
+from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
@@ -7,11 +9,13 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register("leader", views.LeaderView)
+
 urlpatterns = [
-   
-    path("home/", views.home),
-    path("about/", views.about),
-    path("", include(router.urls)),
+	path('', views.home, name="home"), 
+	path('about/', views.about, name="about"), 
+	path('contact.html', views.contact, name="contact"),
+
+ 	path('api/', include(router.urls)),
    
 ]
 
