@@ -27,8 +27,7 @@ def about(request):
 
 def contact(request):
 	 member = Members.objects.all()
-	 Name = Members.objects
-	 return render(request, 'contact.html', {'member':member})
+	 return render(request, 'contact.html', {})
 
 
 
